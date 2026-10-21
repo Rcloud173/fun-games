@@ -16,9 +16,9 @@ Mistakes are welcome, because we don't stop until we beat that one boss, then an
 
 
 ## Roadmap
-f
+
 - [ ] Finish Spaceship_game.
 - [ ] Add more games.
-- [ ] Improve existing games.
+- [ ] Improve existing games
 - [ ] Experiment with new mechanics.
 - [ ] Defeat every bug boss.
