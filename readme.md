@@ -12,12 +12,11 @@ Mistakes are welcome, because we don't stop until we beat that one boss, then an
 
 | Game | Description | Status |
 |------|-------------|--------|
-| Spaceship_game | simple arcade game | In Progress |
+| Spaceship_game | simple arcade game | DONE |
 
 
 ## Roadmap
 
-- [ ] Finish Spaceship_game.
 - [ ] Add more games.
 - [ ] Improve existing games
 - [ ] Experiment with new mechanics.
