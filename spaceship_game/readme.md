@@ -1,15 +1,19 @@
+# Space Shooter
 
-# 🚀 Spaceship Game
+A simple 2D space shooter game built with Python and Pygame.
 
-## 🎮 Objective
-Pilot your spaceship and dodge incoming obstacles to survive as long as possible!
+## Features
+- Player movement and laser shooting
+- Random meteor spawning and rotation
+- Collision detection
+- Animated explosions and sound effects
+- Background music and score tracking
 
-## 🕹️ How to Play
-- Control your spaceship to avoid obstacles.
-- Stay alert and react quickly to incoming hazards.
-- Try to survive for as long as you can without crashing.
+## Requirements
+- Python 3.12+
+- Pygame CE
 
-## 🎯 Goal
-Test your reflexes, avoid collisions, and see how long you can survive in space!
+## Installation
 
-**Good luck, pilot! 🌌**
+```bash
+pip install pygame-ce
