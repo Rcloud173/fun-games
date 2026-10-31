@@ -17,7 +17,7 @@ x = 100
 #importing image
 player_surf = pygame.image.load("../resources/images/player.png").convert_alpha()
 player_rect = player_surf.get_frect(center = (win_width // 2, win_height // 2))
-player_direction = pygame.math.Vector2(1,0)
+player_direction = pygame.math.Vector2()
 player_speed = 300
 
 
@@ -32,11 +32,29 @@ laser_rect = laser_surf.get_frect(bottomleft = (20, win_height - 20 ))
 
 
 while running:
-    dt = clock.tick(10)/1000
+    dt = clock.tick()/1000
     # event loop
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        # adding key controls practice for learning purpose  
+        # if  event.type == pygame.KEYDOWN and event.key == pygame.K_1:
+        #     print(1)
+        # if event.type == pygame.MOUSEMOTION:
+        #     player_rect.center = event.pos
+
+        #input
+        # print(pygame.mouse.get_rel())
+    keys = pygame.key.get_pressed()
+    player_direction.x = int(keys[pygame.K_RIGHT]) - int(keys[pygame.K_LEFT])
+    player_direction.y = int(keys[pygame.K_DOWN]) - int(keys[pygame.K_UP])
+    player_direction = player_direction.normalize() if player_direction else player_direction
+    player_rect.center += player_direction * player_speed * dt
+
+    recent_keys = pygame.key.get_just_pressed()
+    if recent_keys[pygame.K_SPACE]:
+        print('fire')
+   
 
     #draw the game 
     display_window.fill("gray")
@@ -44,13 +62,44 @@ while running:
         display_window.blit(star, pos )
     display_window.blit(meteor_surf, meteor_rect)
     display_window.blit(laser_surf, laser_rect)
-
     # player movement
-    # player_rect.x += player_direction * 0.4
-    # if player_rect.right > win_width or player_rect.left < 0 :
-    #     player_direction *= -1
-    player_rect.center += player_direction * player_speed * dt
     display_window.blit(player_surf, player_rect.topleft)
 
     pygame.display.update()
 pygame.quit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# player_rect.x += player_direction * 0.4
+    # if player_rect.right > win_width or player_rect.left < 0 :
+    #     player_direction *= -1
+    # dvd movement (for fun)
+    # if player_rect.bottom > win_height or player_rect.top < 0 :
+    #     player_direction.y *= -1
+    # if player_rect.right > win_width or player_rect.left < 0:
+    #         player_direction.x *= -1
