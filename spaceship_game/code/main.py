@@ -86,6 +86,7 @@ def display_score():
     text_surf = font.render(str(current_time), True, "#76e5c6")
     text_rect = text_surf.get_frect(midbottom = (win_width / 2, win_height - 50))
     display_window.blit(text_surf, text_rect)
+    pygame.draw.rect(display_window, (240,230,230), text_rect.inflate(20,10).move(0,-8), 5, 10 )
 
 
 #general setup  
